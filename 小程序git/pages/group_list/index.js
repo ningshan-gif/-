@@ -58,7 +58,7 @@ Page({
         // await all requests respond and then update the profiles
         Promise.all(groupRequests).then((groupsData) => {
           const groupProfiles = [];
-          for (let i = 0; i < groups.length; i++) {
+          for (let i = 0; i < groupsData.length; i++) {
             groupProfiles.push({
               // this may not be correct need to look inton what the exact response is
               groupName: groupsData[i].data.groupName,
