@@ -5,6 +5,18 @@
 const app = getApp()
 const baseURL='https://aws.nicegoodthings.com/'
 
+const promisedRequest = (url, method, data) => {
+    return new Promise((resolve, reject) => {
+        wx.request({
+            url: url,
+            method: method,
+            data: data,
+            success: resolve,
+            fail: reject
+  
+      })
+    })
+}
 
 Page({
   data: {
@@ -20,6 +32,7 @@ Page({
   goProfileDetail(evt) {
     console.log('evt', evt)
     const { currentTarget: { dataset: { uid } } } = evt;
+    // this should navigate to a group detail page rather than a group list?
     wx.navigateTo({
       url: `/pages/group_list/index?uid=${uid}&avatar=${evt.currentTarget.dataset.avatar}`
     })
@@ -32,40 +45,32 @@ Page({
   },
 
   onLoad() {
-    wx.request({
-      url: `${baseURL}groups`,
-      method: 'GET',
-      data: {
+    promisedRequest(`${baseURL}groups`, 'GET', {
         userId: 423
-      },
-      success: (e) => {
-        console.log(e);
-        let transformed = [];
-        for (i = 0; i < e.data.groups.length; i++) {
-            wx.request({
-              url: `${baseURL}group`,
-              method: 'GET',
-              data: {
+    }).then((groupLists) => {
+        const groupRequests = [];
+        // init all requests
+        for (let i = 0; i < groupLists.data.groups.length; i++) {
+            groupRequests.push(promisedRequest(`${baseURL}group`, 'GET', {
                 groupId: e.data.data.groups[i]
-              },
-              success: (e) => {
-                console.log(e);
-                let transformed = transformed.concat([{groupName: e.data.data.groups[i].groupName, groupAvatar: e.data.data.groups[i].avatar, groupDesc: e.data.data.groups[i].groupDesc}]);
-              },
-              fail: (e)=> {
-                console.log('failed')
-              }
-    
-        })
-      }
-      this.setData({profiles: transformed})
-    },
-      fail: (e)=> {
-        console.log('failed')
-      }
+            }));
+        }
+        // await all requests respond and then update the profiles
+        Promise.all(groupRequests).then((groupsData) => {
+          const groupProfiles = [];
+          for (let i = 0; i < groupsData.length; i++) {
+            groupProfiles.push({
+              // this may not be correct need to look inton what the exact response is
+              groupName: groupsData[i].data.groupName,
+              groupAvatar: groupsData[i].data.avatar,
+              groupDesc: groupsData[i].data.groupDesc
+            });
+          }
+          this.setData({profiles: groupProfiles})
+        });
+    });
 
-    })
-    },
+  },
   
 
 })

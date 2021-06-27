@@ -7,6 +7,7 @@ Page({
   /**
    * Page initial data
    */
+  // The data structure should be different?
   data: {
     region: [],
     customItem: '全部',
@@ -39,6 +40,7 @@ Page({
         title: '注册成功',
         content: '群档案完成注册，请分享到群里让小伙伴们来填写资料吧',
         success: () => {
+                // should navigate to next page here
             }
           });
         }
