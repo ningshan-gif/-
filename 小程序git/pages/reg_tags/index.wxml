@@ -1,0 +1,30 @@
+<!--pages/reg_tags/index.wxml-->
+<view class="main">
+  <text class="title">选择你擅长的标签</text>
+
+  <view class="sub-title">
+    <p>你擅长的</p>
+    <p class="last-title">领域</p>
+  </view>
+  <view class="selection-area">
+    <view bindtap="handleDomainItem" data-id="{{index}}" wx:for="{{goodDomainTags}}" wx:key="index" wx:for-item="item" class="selection-item {{item.active == 1 ? 'active' : ''}}">
+      <p class="item-content">{{item.tagName}}</p>
+    </view>
+    <image class="item-add" src="https://static.nicegoodthings.com/uPic/co-link/sHcsGd.png"></image>
+  </view>
+
+  <view class="sub-title">
+    <p>你擅长的</p>
+    <p class="last-title">话题</p>
+  </view>
+  <view class="selection-area">
+    <view bindtap="handleTopicItem" data-id="{{index}}" wx:for="{{goodTopicTags}}" wx:key="index" wx:for-item="item" class="selection-item {{item.active == 1 ? 'active' : ''}}">
+      <p class="item-content">{{item.tagName}}</p>
+    </view>
+    <image class="item-add" src="https://static.nicegoodthings.com/uPic/co-link/sHcsGd.png"></image>
+  </view>
+
+  <button class="next-step" bindtap="handleNext"> 
+      <p>下一步</p>
+  </button>
+</view>

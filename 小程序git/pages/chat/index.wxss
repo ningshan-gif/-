@@ -1,0 +1,8 @@
+/* pages/chat/index.wxss */
+.page{
+  width:100vw;
+  min-height: 100vh;
+  background-image: url(https://static.nicegoodthings.com/uPic/co-link/g1ktJk.png);
+  background-size: 100%;
+  background-position-y: -200rpx;
+}

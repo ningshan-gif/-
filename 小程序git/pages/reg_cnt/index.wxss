@@ -1,0 +1,86 @@
+/* pages/reg/index.wxss */
+.title {
+  font-family: FZDeSaiHeiS;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 38px;
+  margin-top: 43px;
+}
+.sub-title {
+  font-family: FZDeSaiHeiS;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 38px;
+  margin-top: 43px;
+}
+
+.sub-container {
+  height: 131.88px;
+
+  margin-top: 23px;
+  margin-left: 38px;
+  margin-right: 38px;
+
+  background: #EEF4FF;
+  box-shadow: 0px 4px 15px rgba(142, 142, 142, 0.25);
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-sub-title {
+  margin-top: 18px;
+  margin-left: 16px;
+  font-family: FZDeSaiHeiS;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.sub-sub-sub-title {
+  margin-top: 2px;
+  margin-left: 16px;
+  font-family: FZDeSaiHeiS;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.sub-add-icon {
+  width: 21px;
+  height: 21px;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top:auto;
+  margin-right: 19px;
+  margin-bottom: 16px;
+}
+
+.next-step {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #056CF2;
+  color: white;
+  border-radius: 20px;
+  width: 280px;
+  margin-top: 73px;
+  height: 50px;
+}

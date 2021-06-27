@@ -1,0 +1,18 @@
+<view class="entry">
+  <view class="title">
+    <image class="title-icon" src="https://static.nicegoodthings.com/uPic/co-link/logo.png"></image>
+    <p>CoffeeChat</p>
+  </view>
+  <view class="middle">
+    <text class="middle-title">一起喝杯咖啡吧</text>
+    <image class="middle-image" src="https://static.nicegoodthings.com/uPic/co-link/fg.png">
+    </image>
+    <image class="middle-bg-image" src="https://static.nicegoodthings.com/uPic/co-link/bg.png">
+    </image>
+  </view>
+  <view class="login-view">
+    <button class="login" bindtap="handleWechatLogin"> 
+      <p>微信一键登录</p>
+    </button>
+  </view>
+</view>

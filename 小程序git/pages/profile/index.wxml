@@ -1,0 +1,33 @@
+<!--pages/profile/index.wxml-->
+<text class="match"> nihao {{profile.match}}%</text>
+<view class="info">
+  
+  <view class="avatar">
+    <image src="{{profile.avatar}}"></image>
+  </view>
+  <text class="username">{{profile.username}}</text>
+  <text wx:if="{{profile.position}}" class="position">{{profile.position}}</text>
+  <text wx:if="{{profile.company}}" class="company">@{{profile.company}}</text>
+  <text class="location">{{profile.location}}</text>
+</view>
+<view class="card about">
+  <text class="title">关于TA</text>
+  <text class="desc">“我是一个在互联网行业摸爬滚打了十年的产品经理，做过社交媒体也做过互联网医疗，欢迎找我聊聊产品方法论。”</text>
+</view>
+<view class="card tags" wx:if="{{profile.commonAttentions.length!==0}}">
+  <text class="title">共同关注</text>
+  <view class="tags">
+    <text class="tag" wx:for="{{profile.commonAttentions}}" wx:for-item="at">{{at}}</text>
+  </view>
+</view>
+<view class="card tags">
+  <text class="title">TA擅长的</text>
+  <view class="tags skilled">
+    <text class="tag" wx:for="{{profile.skilled}}" wx:for-item="sk">{{sk}}</text>
+  </view>
+</view>
+<view class="btns">
+  <button class="btn" bindtap="sayHello" >打个招呼</button>
+  <button class="btn" bindtap="sayHello" >打个招呼</button>
+  <button class="btn" data-uid="{{profile.id}}" bindtap="haveCoffee">来杯咖啡</button>
+</view>

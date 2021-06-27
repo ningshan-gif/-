@@ -1,0 +1,41 @@
+<!--pages/reg/index.wxml-->
+<view>
+  <view class="title">完善你的经历</view>
+  <mymodal showStatus="{{companyShow}}" type="prompt" formItems="{{companyConfig}}" bind:complete="onCompleteCompany" />
+
+  <mymodal showStatus="{{educationShow}}" type="prompt" formItems="{{educationConfig}}" bind:complete="onCompleteEducation" />
+
+  <view class="sub-area">
+    <view class="sub-title">
+      工作经历
+    </view>
+    <view wx:if="{{!displayCompany}}" bindtap="handleCompany" class="sub-container">
+      <p class="sub-sub-title">添加工作经历</p>
+      <p class="sub-sub-sub-title">让大家更快认识你</p>
+      <image class="sub-add-icon" src="https://static.nicegoodthings.com/uPic/co-link/sHcsGd.png"></image>
+    </view>
+    <view wx:else bindtap="handleCompany" class="sub-container">
+      <p class="sub-sub-title">{{companyData.company}}</p>
+      <p class="sub-sub-sub-title">{{companyData.role}}</p>
+    </view>
+  </view>
+
+  <view class="sub-area">
+    <view class="sub-title">
+      教育经历
+    </view>
+    <view wx:if="{{!displayEducation}}" bindtap="handleEduction" class="sub-container">
+      <p class="sub-sub-title">添加教育经历</p>
+      <p class="sub-sub-sub-title">让校友找到你</p>
+      <image class="sub-add-icon" src="https://static.nicegoodthings.com/uPic/co-link/sHcsGd.png"></image>
+    </view>
+    <view wx:else bindtap="handleEduction" class="sub-container">
+      <p class="sub-sub-title">{{educationData.undergrad}}</p>
+      <p class="sub-sub-sub-title">{{educationData.major}}</p>
+    </view>
+  </view>
+    
+  <button class="next-step" bindtap="handleNext"> 
+    <p>下一步</p>
+  </button>
+</view>

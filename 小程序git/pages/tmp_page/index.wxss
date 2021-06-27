@@ -1,0 +1,8 @@
+/* pages/tmp_page/index.wxss */
+.page{
+  width:100vw;
+  min-height: 100vh;
+  background-image: url(https://static.nicegoodthings.com/uPic/co-link/6iXnzx.png);
+  background-size: 100%;
+  background-position-y: -200rpx;
+}

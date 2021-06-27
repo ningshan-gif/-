@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/landing/index",
+    "pages/chat/index",
+    "pages/reg/index",
+    "pages/reg_cnt/index",
+    "pages/reg_tags/index",
+    "pages/appointment_success/index",
+    "pages/appointment_list/index",
+    "pages/reg_tags_cont/index",
+    "pages/appointment/index",
+    "pages/profile/index",
+    "pages/history/index",
+    "pages/tmp_page/index",
+    "pages/groupchat/index",
+    "pages/group_list/index",
+    "pages/group_reg/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

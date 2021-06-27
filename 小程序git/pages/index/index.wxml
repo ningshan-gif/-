@@ -1,0 +1,33 @@
+<view>
+  <view class="card" wx:key="id" bindtap="goProfileDetail" wx:for="{{profiles}}" wx:for-item="p" data-uid="{{p.id}}" data-avatar="{{p.avatar}}">
+    <!-- 基本信息 -->
+    <view class="info">
+    <view class="avatar">
+      <image  src="{{p.avatar}}"></image>
+    </view>
+      <view class="detail">
+        <view class="row">
+          <text class="username {{p.sex==1?'m':'w'}}">{{p.username}}</text>
+          <text class="match">匹配度 {{p.match}}%</text>
+        </view>
+        <view class="row">
+          <text class="company">{{p.company}}</text>
+        </view>
+        <view class="row">
+          <text wx:if="{{p.position}}" class="position">{{p.position}}</text>
+          <text class="addr">{{p.addr}}</text>
+        </view>
+      </view>
+    
+    </view>
+    <!-- 标签列表 -->
+    <view class="tags">
+      <view class="tag" wx:key="tag" wx:for="{{p.tags}}" wx:for-item="tag">
+          {{tag}}
+      </view>
+    </view>
+  </view>
+  <view class="sub" bindtap="handleSub">
+      <image src="https://static.nicegoodthings.com/uPic/co-link/Gzfjwu.png"></image>
+    </view>
+</view>

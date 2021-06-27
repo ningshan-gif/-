@@ -1,0 +1,107 @@
+/* pages/profile/index.wxss */
+page{
+  background-size: 100%;
+  background-image:url(https://static.nicegoodthings.com/uPic/co-link/6wtBVL.jpg);
+  background-position-y:-20%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-bottom: 100rpx;
+}
+.match{
+  font-size: 24rpx;
+  color:#fff;
+  background:transparent;
+  padding:14rpx;
+  border: 2rpx solid #fff;
+  border-radius: 20rpx;
+  position: absolute;
+  top:36rpx;
+  right: 36rpx;
+}
+.info{
+  font-size: 28rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 240rpx;
+}
+
+.info .avatar{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.info .avatar image{
+  width:100%;
+  height: 100%;
+}
+.info .username{
+  font-size: 48rpx;
+  margin-bottom: 28rpx;
+}
+.info .position{
+  /* font-size: 28rpx; */
+}
+.info .company{
+  /* font-size: 28rpx; */
+}
+.info .location{
+  padding-left:30rpx;
+  background-image:url(https://static.nicegoodthings.com/uPic/co-link/Cojtof.jpg);
+  background-repeat: no-repeat;
+  background-size: 24rpx;
+  color: rgba(5, 108, 242, 1);
+
+}
+.card{
+  margin:32rpx 66rpx;
+  border-radius: 10rpx;
+  background-color:#E6F0FF;
+  padding:30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.card .title{
+  color:rgba(5, 108, 242, 1);
+  margin-bottom:15rpx;
+}
+.card .desc{
+  font-size: 28rpx;
+}
+.card .tags{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card .tags .tag{
+  display: flex;
+  align-items: center;
+  padding:12rpx 16rpx;
+  font-size: 24rpx;
+  color:#fff;
+  background-color:rgba(0, 111, 255, 1) ;
+  border-radius: 20rpx;
+  margin-right:12rpx;
+  margin-bottom: 12rpx;
+}
+.card .tags .tag.skilled{
+  background-color: rgba(0, 186, 226, 1);
+}
+.btns{
+  color:#fff;
+  width:100%;
+  position:fixed;
+  bottom:30rpx;
+  display:flex;
+  justify-content: space-between;
+}
+.btns .btn{
+  width: fit-content;
+  color:#fff;
+  background:rgba(5, 108, 242, 1);
+  border:none;
+  outline: none;
+  box-shadow: 0px 8rpx 20rpx #519CFF;
+  border-radius: 40rpx;
+}

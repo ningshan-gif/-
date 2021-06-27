@@ -1,0 +1,123 @@
+/* pages/group_list/index.wxss */
+/**index.wxss**/
+page{
+  background-color: #f1f1f1;
+}
+/* card */
+.card{
+  border-radius: 10rpx;
+  color: #000;
+  padding:40rpx;
+  padding-bottom: 28rpx;
+  margin:32rpx 40rpx;
+  background-color:#fff;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* info */
+.card .info{
+  display: flex;
+}
+.card .info .detail{
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  padding-left:30rpx;
+}
+.card .info .detail .row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.card .info .detail .username{
+  font-size: 36rpx;
+  color:#000;
+  padding-right:30rpx;
+  background-repeat: no-repeat;
+  background-size:16rpx auto;
+  background-position: right 40%;
+}
+.card .info .detail .username.m{
+ background-image: url(https://static.nicegoodthings.com/uPic/co-link/FND4SS.jpg);
+}
+.card .info .detail .username.w{
+  padding-right:36rpx;
+  background-size:22rpx auto;
+  background-image: url(https://static.nicegoodthings.com/uPic/co-link/4wgiDd.jpg);
+ }
+.card .info .detail .match{
+  font-size: 24rpx;
+  color:#fff;
+  background-color:rgba(5, 108, 242, 1);
+  padding:16rpx;
+  border-radius: 20rpx;
+}
+.card .info .detail .position,
+.card .info .detail .company,
+.card .info .detail .addr{
+  font-size: 28rpx;
+  color:#7F838F;
+}
+.card .info .detail .position{
+  flex:1;
+  padding-left:30rpx;
+  background-image:url(https://static.nicegoodthings.com/uPic/co-link/Lfcq6Q.jpg);
+  background-repeat: no-repeat;
+  background-size: 24rpx;
+  background-position-y: 50% ;
+}
+.card .info .detail .addr{
+  flex:1;
+  padding-left:30rpx;
+  background-image:url(https://static.nicegoodthings.com/uPic/co-link/Cojtof.jpg);
+  background-repeat: no-repeat;
+  background-size: 24rpx;
+}
+
+.card .avatar{
+  overflow: hidden;
+  border-radius: 50%;
+  width:140rpx;
+  height:140rpx;
+}
+.card .avatar image{
+  width:100%;
+  height:100%;
+}
+/* tags */
+.card .tags{
+  margin-top: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card .tags .tag{
+  display: flex;
+  align-items: center;
+  padding:12rpx 16rpx;
+  font-size: 24rpx;
+  color:#000;
+  background-color:rgba(195, 220, 253, 1) ;
+  border-radius: 20rpx;
+  margin-right:12rpx;
+  margin-bottom: 12rpx;
+}
+
+.sub {
+  width: 40px;
+  height: 40px;
+  border-radius: 28px;
+  background: #FFBD2E;
+  box-shadow: 0px 2px 1px #c1c4ce;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub image {
+  width: 23px;
+  height: 23px;
+}

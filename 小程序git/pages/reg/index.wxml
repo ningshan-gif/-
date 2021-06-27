@@ -1,0 +1,55 @@
+<!--pages/reg/index.wxml-->
+<view>
+  <view class="title">填写个人基本信息</view>
+  <form>
+    <view class="row first-row">
+      <text>头像</text>
+      <view class="round-avatar">
+        <image class="avatar" src="{{avatar}}"></image>
+      </view>
+    </view>
+    <view class="row">
+      <view class="col">
+        <text>姓名</text>
+        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写姓名" id="name" value="{{name}}" />
+      </view>
+    </view>
+    <view class="row">
+      <view class="col">
+        <text>性别</text>
+        <view class="section">
+            <picker bindchange="handleGenderChange" value="{{gendersIndex}}" range="{{genders}}">
+              <view wx:if="{{gendersIndex === 0}}" class="picker-content">
+                {{genders[gendersIndex]}}
+              </view>
+              <view wx:else class="picker-content  black">
+                {{genders[gendersIndex]}}
+              </view>
+            </picker>
+        </view>
+      </view>
+    </view>
+    <view class="row">
+      <view class="col">
+        <text>工作邮箱</text>
+        <input class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写工作邮箱" id="email" bindinput="bindEmailChange" />
+      </view>
+    </view>
+    <view class="row">
+      <view class="col">
+        <text>地区</text>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view wx:if="{{region.length == 3}}" class="region-picker black">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+          <view class="region-picker" wx:else>
+            请选择你的地址
+          </view>
+        </picker>
+      </view>
+    </view>
+    <button class="next-step" bindtap="handleNext"> 
+      <p>下一步</p>
+    </button>
+  </form>
+</view>

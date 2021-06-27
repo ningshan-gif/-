@@ -1,0 +1,72 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/history/index",
+          "pathName": "pages/history/index",
+          "query": "uuid=ol3Wl4mvorVlzjBDhaDsfpMsCAiU&hid=gpekcq",
+          "scene": null
+        },
+        {
+          "name": "pages/chat/index",
+          "pathName": "pages/chat/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/reg_tags/index",
+          "pathName": "pages/reg_tags/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/reg_tags_cont/index",
+          "pathName": "pages/reg_tags_cont/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/reg_cnt/index",
+          "pathName": "pages/reg_cnt/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/chat/index",
+          "pathName": "pages/chat/index",
+          "query": "uid=ol3Wl4vtDOu3aRuEOwATt_d03RUg&avatar=https://thirdwx.qlogo.cn/mmopen/vi_32/V9fRQTGE3eZq1QsUSuddHXa8Ux1v0tGRbxWlwRr0B8HibJ0O1WxduJQkcWl8dJakK5icMDzm7MNym8DdvXY3ibLbQ/132&my=https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJtjm6Hr0YHBQxD3ggZtzlj2ezwrVMAM59GiaGMA1lUGyX3ITZolovfqcMMfoXq9JXxeg4ac2XV39w/132",
+          "scene": null
+        },
+        {
+          "name": "pages/group_list/index",
+          "pathName": "pages/group_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/group_reg/index",
+          "pathName": "pages/group_reg/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

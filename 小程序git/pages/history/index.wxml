@@ -1,0 +1,18 @@
+<!--pages/history/index.wxml-->
+
+<view class="card range">
+  <text class="title">预约时间</text>
+  <text class="desc">
+    {{history.range.from}} - {{history.range.to}}
+  </text>
+</view>
+<view class="card addr">
+  <text class="title">预约地点</text>
+  <text class="desc">
+    {{history.addr}}
+  </text>
+</view>
+<view class="btns">
+  <button class="btn accept" bindtap="handleAccept" >接受邀请</button>
+  <button class="btn decline" bindtap="handleDecline">拒绝邀请</button>
+</view>
