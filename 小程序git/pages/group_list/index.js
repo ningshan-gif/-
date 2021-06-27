@@ -8,11 +8,9 @@ const baseURL='https://aws.nicegoodthings.com/'
 const promisedRequest = (url, method, data) => {
     return new Promise((resolve, reject) => {
         wx.request({
-            url: `${baseURL}group`,
-            method: 'GET',
-            data: {
-              groupId: e.data.data.groups[i]
-            },
+            url: url,
+            method: method,
+            data: data,
             success: resolve,
             fail: reject
   
