@@ -1,5 +1,5 @@
 <!--pages/profile/index.wxml-->
-<text class="match"> nihao {{profile.match}}%</text>
+<text class="match"> 匹配 {{profile.match}}%</text>
 <view class="info">
   
   <view class="avatar">

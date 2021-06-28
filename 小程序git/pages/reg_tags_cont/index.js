@@ -1,5 +1,6 @@
 // pages/reg_tags/index.js
 const app = getApp();
+const url = `https://aws.nicegoodthings.com/group/member`
 
 Page({
 
@@ -51,6 +52,7 @@ Page({
     }
   },
 
+
   handleNext() {
     if (this.data.selectedInterestDomainTags.length === 0 || 
         this.data.selectedInterestTopicTags.length === 0 ) {
@@ -69,6 +71,14 @@ Page({
       interestDomainTags: this.data.interestDomainTags.filter((it) => it.active).map((it) => it.tagName),
       interestTopicTags: this.data.interestTopicTags.filter((it) => it.active).map((it) => it.tagName)
     };
+    
+    promisedRequest(url, 'POST', {
+      'groupId': 'some number',
+      'users': ['123','12',]
+    }).then((it) => {
+      console.log('finished')
+    }),
+
     wx.request({
       url: 'https://wx.nicegoodthings.com/profile',
       data: {

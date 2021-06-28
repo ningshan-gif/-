@@ -7,7 +7,7 @@
     </view>
       <view class="detail">
         <view class="row">
-          <text class="username {{p.sex==1?'m':'w'}}">{{p.username}}</text>
+          <text class="username {{p.sex==1?'m':'w'}}">{{p.nickname}}</text>
           <text class="match">匹配度 {{p.match}}%</text>
         </view>
         <view class="row">

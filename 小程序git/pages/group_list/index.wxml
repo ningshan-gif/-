@@ -1,5 +1,5 @@
 <view>
-  <view class="card" wx:key="id" bindtap="goProfileDetail" wx:for="{{profiles}}" wx:for-item="p" data-uid="{{p.id}}" data-avatar="{{p.avatar}}">
+  <view class="card" wx:key="id" bindtap="goProfileDetail" wx:for="{{profiles}}" wx:for-item="p" data-groupid="{{p.id}}" data-avatar="{{p.avatar}}">
     <!-- 我的群聊 -->
     <view class="info">
     <view class="avatar">

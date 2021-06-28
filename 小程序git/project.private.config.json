@@ -65,6 +65,18 @@
           "pathName": "pages/group_reg/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/profile/index",
+          "pathName": "pages/profile/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/reg/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

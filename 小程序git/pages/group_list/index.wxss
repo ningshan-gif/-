@@ -46,13 +46,14 @@ page{
   background-size:22rpx auto;
   background-image: url(https://static.nicegoodthings.com/uPic/co-link/4wgiDd.jpg);
  }
-.card .info .detail .match{
+.card .info .detail .people{
   font-size: 24rpx;
   color:#fff;
   background-color:rgba(5, 108, 242, 1);
   padding:16rpx;
   border-radius: 20rpx;
 }
+.card .info .detail .note,
 .card .info .detail .position,
 .card .info .detail .company,
 .card .info .detail .addr{
