@@ -49,7 +49,7 @@ Page({
                 data: {
                   'jscode': res.code
                 },
-                success: (resp) => {
+                zsuccess: (resp) => {
                   app.globalData.userData = {
                     username: this.data.name,
                     location: this.data.region,

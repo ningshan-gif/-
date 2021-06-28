@@ -31,10 +31,10 @@ Page({
   // 事件处理函数
   goProfileDetail(evt) {
     console.log('evt', evt)
-    const { currentTarget: { dataset: { uid } } } = evt;
+    const { currentTarget: { dataset: { groupid } } } = evt;
     // this should navigate to a group detail page rather than a group list?
     wx.navigateTo({
-      url: `/pages/group_list/index?uid=${uid}&avatar=${evt.currentTarget.dataset.avatar}`
+      url: `/pages/index/index?groupid=${groupid}`
     })
   }, 
 

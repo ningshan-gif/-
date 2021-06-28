@@ -1,4 +1,27 @@
 const { debounce } = require("../../utils/util")
+const url =  `https://aws.nicegoodthings.com/group`
+const promisedRequest = (url, method, data) => {
+  return new Promise((resolve, reject) => {
+      wx.request({
+          url: url,
+          method: method,
+          data: data,
+          success: resolve,
+          fail: reject
+
+    })
+  })
+}
+ 
+
+promisedRequest(url, 'POST', {
+  'groupId': 'some number',
+  'groupName': 'some name',
+  'groupDesc': 'some description',
+  'groupAvatar': ''
+}).then((it) => {
+  console.log('finished')
+})
 
 // pages/reg/index.js
 const app = getApp()
@@ -40,7 +63,9 @@ Page({
         title: '注册成功',
         content: '群档案完成注册，请分享到群里让小伙伴们来填写资料吧',
         success: () => {
-                // should navigate to next page here
+          
+
+// should navigate to next page here
             }
           });
         }
@@ -66,6 +91,37 @@ Page({
       name: info.nickName
     });
   },
+
+  // 3 button 的开放功能<button open-type="share">分享</button>
+onShareAppMessage: function(res) {
+  var that = this;
+  //console.log('res=====',res);
+  if (res.from === 'button') {
+    //console.log('来自页面内转发按钮');
+  } else if (res.from === 'menu'){
+    //console.log('右上角菜单转发按钮');
+  }
+  // 返回数据
+  return {
+    title: that.data.info.name,
+    path: '/pages/food/info?id=' + that.data.info.id,
+    success: function(res) {
+      // 转发成功，可以把当前页面的链接发送给后端，用于记录当前页面被转发了多少次或其他业务
+      wx.request({
+        url: app.buildUrl("/member/share"),
+        data: {
+          url: utils.getCurrentPageUrlWithArgs()
+        },
+        success: function(res) {
+          //console.log('成功');
+        }
+      });
+    },
+    fail: function(res) {
+      // 转发失败
+    }
+  }
+},
 
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -114,5 +170,25 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  chooseImage() {
+    //拍照或从相册选图
+      wx.chooseImage({
+          count: 1,
+          sizeType: ['original', 'compressed'],   //所选的图片的尺寸
+          sourceType: ['album', 'camera'],        //选择图片的来源
+          success: res => this.urlTobase64(res.tempFilePaths[0])  //成功的回调，文件路径
+      })
+  },
+
+  urlTobase64(imgPath) {
+      //读取图片的base64文件内容
+      wx.getFileSystemManager().readFile({
+          filePath: imgPath, //选择图片返回的相对路径
+          encoding: 'base64', //编码格式
+          success: res => console.log('data:image/png;base64,' + res.data)  //成功的回调
+      })
+      avatar = res.data
+  },
 })

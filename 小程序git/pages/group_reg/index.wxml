@@ -23,11 +23,7 @@
     <view class="row">
       <view class="col">
         <text>地区</text>
-        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-          <view wx:if="{{region.length == 3}}" class="region-picker black">
-            {{region[0]}}，{{region[1]}}，{{region[2]}}
-          </view>
-        </picker>
+        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写地区" id="region" value="{{region}}" />
       </view>
     </view>
     <button class="next-step" bindtap="handleNext"> 

@@ -77,22 +77,6 @@
   margin-top: 73px;
 }
 
-.picker-content {
-  color:#c7c7c7;
-  size: 18px;
-  weight: 300;
-  padding-top: 16px;
-  border-bottom: 1px solid #EBEBEB;
-}
-
-.region-picker {
-  color:#c7c7c7;
-  size: 18px;
-  weight: 300;
-  padding-top: 16px;
-  border-bottom: 1px solid #EBEBEB;
-}
-
 .black {
   color: black;
 }
