@@ -35,6 +35,7 @@ Page({
   },
 
   handleNext: function() {
+    
     if (this.data.name && this.data.region && this.data.gendersIndex !== 0 && this.data.email) {
       wx.showModal({
         showCancel: false,
@@ -62,6 +63,7 @@ Page({
                   }
                   wx.navigateTo({
                     url: '../reg_cnt/index'
+                    
                   });
                 }
               })

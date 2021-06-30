@@ -115,7 +115,9 @@ page{
   justify-content: center;
   align-items: center;
 }
-
+.sub .buttom{
+  right: 60px;
+}
 .sub image {
   width: 23px;
   height: 23px;

@@ -27,7 +27,7 @@
       </view>
     </view>
   </view>
-  <view class="sub" bindtap="handleSub">
-      <image src="https://static.nicegoodthings.com/uPic/co-link/Gzfjwu.png"></image>
+    <view class="sub" bindtap="handleSub">
+      <text class="bottom" > 点击注册 </text>
     </view>
 </view>
