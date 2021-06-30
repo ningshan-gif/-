@@ -14,14 +14,7 @@ const promisedRequest = (url, method, data) => {
 }
  
 
-promisedRequest(url, 'POST', {
-  'groupId': 'some number',
-  'groupName': 'some name',
-  'groupDesc': 'some description',
-  'groupAvatar': ''
-}).then((it) => {
-  console.log('finished')
-})
+
 
 // pages/reg/index.js
 const app = getApp()
@@ -32,22 +25,22 @@ Page({
    */
   // The data structure should be different?
   data: {
-    region: [],
-    customItem: '全部',
+    region: '',
+    content: '全部',
     avatar: '',
     name: '',
-    content: ''
+    groupDesc: ''
   },
 
-  bindEmailChange: function(res) {
+  bindDescChange: function(res) {
     this.setData({
-      email: res.detail.value
+      groupDesc: res.detail.value
     });
   },
 
-  handleGenderChange: function(res) {
+  bindNameChange: function(res) {
     this.setData({
-      gendersIndex: res.detail.value
+      name: res.detail.value
     })
   },
   bindRegionChange: function (e) {
@@ -57,13 +50,21 @@ Page({
   },
 
   handleNext: function() {
-    if (this.data.name && this.data.region && this.data.gendersIndex !== 0 && this.data.email) {
+    if (this.data.name && this.data.groupDesc) {
       wx.showModal({
         showCancel: false,
         title: '注册成功',
         content: '群档案完成注册，请分享到群里让小伙伴们来填写资料吧',
         success: () => {
-          
+          promisedRequest(url, 'POST', {
+            'groupId': 425,
+            'groupName': name,
+            'groupDesc': groupDesc,
+            'groupAvatar': avatar
+          }).then((it) => {
+            console.log('finished')
+          })
+
 
 // should navigate to next page here
             }
@@ -83,13 +84,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const info = app.globalData.userInfo;
-    this.setData({
-      avatar: info.avatarUrl,
-      region: [info.country, info.province, info.city],
-      gendersIndex: info.gender === 1 ? 1 : 2,
-      name: info.nickName
-    });
+    
   },
 
   // 3 button 的开放功能<button open-type="share">分享</button>
@@ -187,8 +182,10 @@ onShareAppMessage: function(res) {
       wx.getFileSystemManager().readFile({
           filePath: imgPath, //选择图片返回的相对路径
           encoding: 'base64', //编码格式
-          success: res => console.log('data:image/png;base64,' + res.data)  //成功的回调
-      })
-      avatar = res.data
+          success: res => {
+            console.log('data:image/png;base64,' + res.data)
+            this.setData({avatar: res.data})
+      }})
+      
   },
 })

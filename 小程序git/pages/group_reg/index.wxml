@@ -4,26 +4,26 @@
   <form>
     <view class="row first-row">
       <text>群头像</text>
-      <view class="round-avatar">
+      <view class="round-avatar" bindtap="chooseImage">
         <image class="avatar" src="{{avatar}}"></image>
       </view>
     </view>
     <view class="row">
       <view class="col">
         <text>群名</text>
-        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写群名" id="name" value="{{name}}" />
+        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写群名" id="name" value="{{name}}" bindinput="bindNameChange" />
       </view>
     </view>
     <view class="row">
       <view class="col">
         <text>群简介</text>
-        <input class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写群简介" id="email" bindinput="bindEmailChange" />
+        <input class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写群简介" id="desc" bindinput="bindDescChange" />
       </view>
     </view>
     <view class="row">
       <view class="col">
         <text>地区</text>
-        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写地区" id="region" value="{{region}}" />
+        <input maxlength="20" class="input-style" placeholder-style="color:#c7c7c7;size:18px;weight:300;"  placeholder="请填写地区" id="region" value="region" bindinput="bindRegionChange"/>
       </view>
     </view>
     <button class="next-step" bindtap="handleNext"> 

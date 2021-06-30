@@ -6,6 +6,7 @@ const app = getApp()
 
 Page({
   data: {
+    groupid: 0,
     profiles: []
   },
 
@@ -20,8 +21,9 @@ Page({
   },
 
   handleSub() {
-    wx.requestSubscribeMessage({
-      tmplIds: ['6mtp2i6Sf8wc0GRrASQs0gfN88Sb-p1ZJmjwHLiQ89I']
+    console.log('hello')
+    wx.navigateTo({
+      url: `/pages/reg/index?groupid=${this.data.groupid}`
     });
   },
   handlePub() {
@@ -42,6 +44,7 @@ Page({
 
   onLoad: function(option) {
     console.log(option)
+    this.setData({groupid: option.groupid})
     wx.request ({
       url: `https://aws.nicegoodthings.com/group?groupId=${option.groupid}`,
       method: 'GET',
@@ -49,6 +52,7 @@ Page({
         console.log(e)
         let {members} = e.data.data
         this.setData({profiles: members})
+  
       }
     })
 
